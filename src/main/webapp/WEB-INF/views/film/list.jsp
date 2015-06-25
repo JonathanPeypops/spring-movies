@@ -4,13 +4,20 @@
 <head>
     <title>Films</title>
     <style>
-        td:last-child{background-color: aliceblue; color: darkgreen;}
-        td:first-child{background-color: black; color: aliceblue;}
+        td:last-child {
+            background-color: aliceblue;
+            color: darkgreen;
+        }
+
+        td:first-child {
+            background-color: black;
+            color: aliceblue;
+        }
     </style>
 </head>
 <body>
 <h1>Films</h1>
-<table border="2"; bgcolor="#00bfff">
+<table border="2" ; bgcolor="#00bfff">
     <tr>
         <th>ID</th>
         <th>Title</th>
@@ -24,12 +31,12 @@
             <c:otherwise>
                 <tr>
                     <td> ${films.id} </td>
-                    <td> ${films.title} </td>
+                    <td><a href="film?id=${films.id}">${films.title}</a></td>
                 </tr>
             </c:otherwise>
         </c:choose>
     </c:forEach>
-
+<a href="form">Add film</a>
 </table>
 </body>
 </html>
