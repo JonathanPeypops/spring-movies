@@ -3,7 +3,8 @@ package be.vdab.films;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Map;
 
 @Controller
 public class FilmController {
@@ -11,14 +12,13 @@ public class FilmController {
     FilmRepository filmRepository;
 
     @RequestMapping("/hello")
-    @ResponseBody
     public String hello(){
-        return "Hello World";
+        return "home";
     }
 
     @RequestMapping("/films")
-    @ResponseBody
-    public String showFilms(){
-        return filmRepository.findAll().toString();
+    public String films(Map<String, Object> model){
+        model.put("films",filmRepository.findAll());
+        return "film/list";
     }
 }
