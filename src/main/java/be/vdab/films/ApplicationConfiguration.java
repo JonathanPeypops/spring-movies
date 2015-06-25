@@ -42,7 +42,7 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    public JpaTransactionManager jpaTransactionManager (EntityManagerFactory entityManagerFactory){
+    public JpaTransactionManager transactionManager (EntityManagerFactory entityManagerFactory){
         return new JpaTransactionManager(entityManagerFactory);
     }
 }
